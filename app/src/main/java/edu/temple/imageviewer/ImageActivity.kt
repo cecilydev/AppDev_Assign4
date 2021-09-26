@@ -12,7 +12,9 @@ class ImageActivity : AppCompatActivity() {
 
         val recycle = findViewById<RecyclerView>(R.id.recyclerView)
 
-        recycle.layoutManager = GridLayoutManager(this, 3, RecyclerView.HORIZONTAL, false)
+        recycle.layoutManager = GridLayoutManager(this, 3)
+
+        recycle.adapter = ImageAdapter(setData())
 
     }
 
