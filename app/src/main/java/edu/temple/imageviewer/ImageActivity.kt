@@ -1,20 +1,30 @@
 package edu.temple.imageviewer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.View.*
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ImageActivity : AppCompatActivity() {
+
+    val data = setData();
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val recycle = findViewById<RecyclerView>(R.id.recyclerView)
 
+
+
         recycle.layoutManager = GridLayoutManager(this, 3)
 
-        recycle.adapter = ImageAdapter(setData())
+        recycle.adapter = ImageAdapter(data, { position -> onClickItem(position) })
 
     }
 
@@ -29,5 +39,15 @@ class ImageActivity : AppCompatActivity() {
         )
 
         return images
+    }
+
+
+    private fun onClickItem(position: Int) {
+        val NPimage = findViewById<ImageView>(R.id.npImage)
+        val NPtext = findViewById<TextView>(R.id.npName)
+
+        NPimage.setImageResource((data[position].resourceId))
+        NPtext.text=data[position].description
+
     }
 }
