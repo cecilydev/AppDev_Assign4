@@ -3,6 +3,7 @@ package edu.temple.imageviewer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.*
 import android.widget.ImageView
@@ -43,11 +44,12 @@ class SelectionActivity : AppCompatActivity() {
 
 
     private fun onClickItem(position: Int) {
-        val NPimage = findViewById<ImageView>(R.id.npImage)
+        Log.d("message", data[position].description)
+       /* val NPimage = findViewById<ImageView>(R.id.npImage)
         val NPtext = findViewById<TextView>(R.id.npName)
 
         NPimage.setImageResource((data[position].resourceId))
-        NPtext.text=data[position].description
+        NPtext.text=data[position].description*/
 
     }
 }
