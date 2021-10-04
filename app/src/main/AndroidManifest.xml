@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageViewer">
         <activity
-            android:name=".ImageActivity"
+            android:name=".DisplayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SelectionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
