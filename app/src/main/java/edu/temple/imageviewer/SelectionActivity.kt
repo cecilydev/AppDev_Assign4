@@ -47,6 +47,7 @@ class SelectionActivity : AppCompatActivity() {
 
         val NPimage = data[position].resourceId
         val NPtext = data[position].description
+        Log.d("NPimage", NPimage.toString());
 
         val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
         intent.putExtra("NPimage", NPimage)
