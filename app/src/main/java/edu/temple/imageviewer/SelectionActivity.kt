@@ -44,12 +44,14 @@ class SelectionActivity : AppCompatActivity() {
 
 
     private fun onClickItem(position: Int) {
-        Log.d("message", data[position].description)
-       /* val NPimage = findViewById<ImageView>(R.id.npImage)
-        val NPtext = findViewById<TextView>(R.id.npName)
 
-        NPimage.setImageResource((data[position].resourceId))
-        NPtext.text=data[position].description*/
+        val NPimage = data[position].resourceId
+        val NPtext = data[position].description
+
+        val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
+        intent.putExtra("NPimage", NPimage)
+        intent.putExtra("NPtext", NPtext)
+        startActivity(intent)
 
     }
 }
