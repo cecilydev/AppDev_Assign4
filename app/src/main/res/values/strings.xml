@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">National Parks Image Viewer App</string>
+    <string name="display_activity_name">National Park - Up Close View</string>
+    <string name="selection_activity_name">National Parks</string>
+    <string-array name="NPs">
+        <item>Acadia</item>
+        <item>Badlands</item>
+        <item>Crater Lake</item>
+        <item>Denali</item>
+        <item>Glacier</item>
+        <item>Grand Canyon</item>
+        <item>Joshua Tree</item>
+        <item>North Cascades</item>
+        <item>Redwoods</item>
+        <item>Rocky Mountain</item>
+        <item>Yellowstone</item>
+        <item>Zion</item>
+    </string-array>
 </resources>

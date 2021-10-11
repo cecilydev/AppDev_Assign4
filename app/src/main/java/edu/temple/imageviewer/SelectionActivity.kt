@@ -13,37 +13,38 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SelectionActivity : AppCompatActivity() {
 
-    val data = setData();
+   // val data = setData();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setTitle("National Parks")
-
+        setTitle(R.string.selection_activity_name)
+        val data = setData();
         val recycle = findViewById<RecyclerView>(R.id.recyclerView)
 
         recycle.layoutManager = GridLayoutManager(this, 3)
 
-        recycle.adapter = ImageAdapter(data, { position -> onClickItem(position) })
+        recycle.adapter = ImageAdapter(setData(), { position -> onClickItem(position, data) })
 
     }
 
 
     fun setData() : Array<ImageObj> {
-        val images = arrayOf(ImageObj("Acadia", R.drawable.acadia), ImageObj("Badlands", R.drawable.badlands),
-            ImageObj("Crater Lake", R.drawable.crater_lake),ImageObj("Denali", R.drawable.denali),
-            ImageObj("Glacier", R.drawable.glacier),ImageObj("Grand Canyon", R.drawable.grand_canyon),
-            ImageObj("Joshua Tree", R.drawable.joshua_tree),ImageObj("North Cascades", R.drawable.north_cascades),
-            ImageObj("Redwoods", R.drawable.redwoods),ImageObj("Rocky Mountain", R.drawable.rocky_mountain),
-            ImageObj("Yellowstone", R.drawable.yellowstone),ImageObj("Zion", R.drawable.zion)
+        val array: Array<String> = resources.getStringArray(R.array.NPs)
+        val images = arrayOf(ImageObj(array[0], R.drawable.acadia), ImageObj(array[1], R.drawable.badlands),
+            ImageObj(array[2], R.drawable.crater_lake),ImageObj(array[3], R.drawable.denali),
+            ImageObj(array[4], R.drawable.glacier),ImageObj(array[5], R.drawable.grand_canyon),
+            ImageObj(array[6], R.drawable.joshua_tree),ImageObj(array[7], R.drawable.north_cascades),
+            ImageObj(array[8], R.drawable.redwoods),ImageObj(array[9], R.drawable.rocky_mountain),
+            ImageObj(array[10], R.drawable.yellowstone),ImageObj(array[11], R.drawable.zion)
         )
 
         return images
     }
 
 
-    private fun onClickItem(position: Int) {
+    private fun onClickItem(position: Int, data: Array<ImageObj>) {
 
         val NPimage = data[position].resourceId
         val NPtext = data[position].description

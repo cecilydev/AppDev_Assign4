@@ -10,7 +10,7 @@ class DisplayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
-        setTitle("National Park - Up Close View")
+        setTitle(R.string.display_activity_name)
 
         val intent = intent
         val nptext = intent.getStringExtra("NPtext")
