@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application de Visualisation d'images des Parcs Nationaux</string>
+    <string name="display_activity_name">Parc National - Vue de près</string>
+    <string name="selection_activity_name">Parcs Nationaux</string>
+    <string name="instruction">Cliquez sur une image ci-dessous pour voir</string>
+    <string-array name="NPs">
+        <item>Acadie</item>
+        <item>Terres sauvages</item>
+        <item>Lac de cratère</item>
+        <item>Denali</item>
+        <item>Glacier</item>
+        <item>Grand Canyon</item>
+        <item>Arbre de Josué</item>
+        <item>Cascades du Nord</item>
+        <item>Séquoias</item>
+        <item>Montagne Rocheuse</item>
+        <item>Yellowstone</item>
+        <item>Sion</item>
+    </string-array>
+</resources>
