@@ -2,6 +2,7 @@
     <string name="app_name">National Parks Image Viewer App</string>
     <string name="display_activity_name">National Park - Up Close View</string>
     <string name="selection_activity_name">National Parks</string>
+    <string name="instruction">Click an image below to view</string>
     <string-array name="NPs">
         <item>Acadia</item>
         <item>Badlands</item>
