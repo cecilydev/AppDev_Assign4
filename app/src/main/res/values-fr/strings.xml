@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Application de Visualisation d'images des Parcs Nationaux</string>
+    <string name="app_name">Application de Visualisation d\'images des Parcs Nationaux</string>
     <string name="display_activity_name">Parc National - Vue de près</string>
     <string name="selection_activity_name">Parcs Nationaux</string>
     <string name="instruction">Cliquez sur une image ci-dessous pour voir</string>
