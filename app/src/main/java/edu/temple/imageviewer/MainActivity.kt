@@ -1,28 +1,28 @@
 package edu.temple.imageviewer
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View.*
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
    // val data = setData();
-
+   private lateinit var fragmentSelection: SelectionFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setTitle(R.string.selection_activity_name)
         val data = setData();
-        val recycle = findViewById<RecyclerView>(R.id.recyclerView)
+        fragmentSelection = SelectionFragment.newInstance(data)
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragmentSelectionView, fragmentSelection)
+            .commit()
+        /*val recycle = findViewById<RecyclerView>(R.id.recyclerView)
 
         recycle.layoutManager = GridLayoutManager(this, 3)
 
-        recycle.adapter = ImageAdapter(setData(), { position -> onClickItem(position, data) })
+        recycle.adapter = ImageAdapter(data, { position -> onClickItem(position, data) })*/
 
     }
 
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun onClickItem(position: Int, data: Array<ImageObj>) {
+    /*private fun onClickItem(position: Int, data: Array<ImageObj>) {
 
         val NPimage = data[position].resourceId
         val NPtext = data[position].description
@@ -52,5 +52,5 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("NPtext", NPtext)
         startActivity(intent)
 
-    }
+    }*/
 }
