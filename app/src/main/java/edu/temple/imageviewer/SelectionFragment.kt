@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -22,7 +23,7 @@ private const val ARG_PARAM1 = "param1"
 class SelectionFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: Array<ImageObj>? = null
-    private var param2: String? = null
+
 
     private lateinit var items: Array<ImageObj>
 
@@ -48,9 +49,9 @@ class SelectionFragment : Fragment() {
 
     private fun onClickItem(position: Int, data: Array<ImageObj>) {
 
-        val NPimage = data[position].resourceId
-        val NPtext = data[position].description
-        Log.d("NPimage", NPimage.toString());
+       /* val NPimage = data[position].resourceId
+        val NPtext = data[position].description*/
+        ViewModelProvider(requireActivity()).get(NPViewModel::class.java).selectItem(data[position])
     }
 
     companion object {

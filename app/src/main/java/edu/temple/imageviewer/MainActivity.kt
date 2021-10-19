@@ -7,6 +7,8 @@ class MainActivity : AppCompatActivity() {
 
    // val data = setData();
    private lateinit var fragmentSelection: SelectionFragment
+   private lateinit var fragmentDisplay: DisplayFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,16 +16,12 @@ class MainActivity : AppCompatActivity() {
         setTitle(R.string.selection_activity_name)
         val data = setData();
         fragmentSelection = SelectionFragment.newInstance(data)
+        fragmentDisplay = DisplayFragment()
 
         supportFragmentManager.beginTransaction()
             .add(R.id.fragmentSelectionView, fragmentSelection)
+            .add(R.id.fragmentDipslayView, fragmentDisplay)
             .commit()
-        /*val recycle = findViewById<RecyclerView>(R.id.recyclerView)
-
-        recycle.layoutManager = GridLayoutManager(this, 3)
-
-        recycle.adapter = ImageAdapter(data, { position -> onClickItem(position, data) })*/
-
     }
 
 
