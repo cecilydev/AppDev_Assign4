@@ -4,14 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.view.View.*
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class SelectionActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
    // val data = setData();
 
@@ -50,7 +47,7 @@ class SelectionActivity : AppCompatActivity() {
         val NPtext = data[position].description
         Log.d("NPimage", NPimage.toString());
 
-        val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
+        val intent = Intent(this@MainActivity, DisplayActivity::class.java)
         intent.putExtra("NPimage", NPimage)
         intent.putExtra("NPtext", NPtext)
         startActivity(intent)
